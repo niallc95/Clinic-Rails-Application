@@ -8,6 +8,7 @@ end
 gem 'rails', '~> 5.0.1'
 gem 'puma', '~> 3.0'
 gem 'sqlite3'
+gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'devise', '~> 4.2'
 gem 'simple_form', '~> 3.4'

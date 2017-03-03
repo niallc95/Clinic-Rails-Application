@@ -1,0 +1,10 @@
+<%= simple_form_for @patient, :html => { :multipart => true } do |f| %>
+	<%= f.select :condition_id, @conditions %>
+	<%= f.input :fname, label: "First Name" %>
+	<%= f.input :lname, label: "Family Name" %>
+	<%= f.input :address, label: "Address" %>
+	<%= f.input :dob, label: "Date of Birth" %>
+	<%= f.input :bloodtype, label: "Blood Type" %>
+	<%= f.input :alergies, label: "Alergies" %>
+	<%= f.button :submit %>
+<% end %>

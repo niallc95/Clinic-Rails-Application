@@ -1,0 +1,14 @@
+<h2><%= @patient.fname %> <%= @patient.lname %></h2>
+<h3>Condition: <%= @patient.condition.name %></h3>
+<h4><%= @patient.bloodtype %></h3>
+<h4><%= @patient.dob %></h3>
+<h4><%= @patient.address %></h3>
+
+<%= link_to "Back", root_path %>
+
+<% if doctor_signed_in? %>
+	<% if @patient.doctor_id == current_doctor.id %>
+		<%= link_to "Edit", edit_patient_path(@patient) %>
+		<%= link_to "Delete", patient_path(@patient), method: :delete, data: {confirm: "Are you sure?"} %>
+	<% end %>
+<% end %>

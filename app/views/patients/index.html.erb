@@ -1,0 +1,9 @@
+<h1 class="current_condition"><%= params[:condition]%></h1>
+
+<% if @patients.count ==0 %>
+	<h1>There are no patients</h1>
+<% else %>
+	<% @patients.each do |patient|%>
+		<h2><%= link_to patient.fname, patient_path(patient)%></h2>
+	<% end %>
+<% end %>

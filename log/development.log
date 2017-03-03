@@ -4468,3 +4468,650 @@ Processing by PatientsController#index as HTML
 Completed 200 OK in 419ms (Views: 385.9ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:38:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PatientsController#index as HTML
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:38:10 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (48.0ms)
+  Rendered patients/index.html.erb within layouts/application (42.5ms)
+Completed 500 Internal Server Error in 990ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ utime_failed - C:/Users/Niall/Desktop/Rails Application/SmartHealthApplication/tmp/cache/assets/sprockets/v3.0/mm/mmDjVtpLyVX-PAxfENH4zNCpfv6DL6ukO3hdAlewNDw.cache):
+    3: 	<head>
+    4: 		<title>Smart Health Application</title>
+    5: 		<%= csrf_meta_tags %>
+    6: 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    7: 	    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    8: 	</head>
+    9: 	<body>
+  
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__24120590_34548948'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1764.9ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 8718ms (Views: 8625.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:38:50 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 354ms (Views: 321.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/patients?condition=Undetermined" for 127.0.0.1 at 2017-03-03 16:39:01 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Undetermined"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Undetermined"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 1]]
+  Rendered patients/index.html.erb within layouts/application (0.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 371ms (Views: 342.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients?condition=Undetermined" for 127.0.0.1 at 2017-03-03 16:39:34 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Undetermined"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Undetermined"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 1]]
+  Rendered patients/index.html.erb within layouts/application (3.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 377ms (Views: 343.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients?condition=Undetermined" for 127.0.0.1 at 2017-03-03 16:42:14 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Undetermined"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Undetermined"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 1]]
+  Rendered patients/index.html.erb within layouts/application (3.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 424ms (Views: 369.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/patients?condition=Good" for 127.0.0.1 at 2017-03-03 16:42:17 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Good"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Good"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 2]]
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 2]]
+  Rendered patients/index.html.erb within layouts/application (0.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 364ms (Views: 323.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients?condition=Serious" for 127.0.0.1 at 2017-03-03 16:42:20 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Serious"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Serious"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 4]]
+  Rendered patients/index.html.erb within layouts/application (0.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 365ms (Views: 330.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/patients?condition=Undetermined" for 127.0.0.1 at 2017-03-03 16:42:22 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Undetermined"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Undetermined"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 1]]
+  Rendered patients/index.html.erb within layouts/application (0.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 410ms (Views: 365.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/patients?condition=Good" for 127.0.0.1 at 2017-03-03 16:42:24 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Good"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Good"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 2]]
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 2]]
+  Rendered patients/index.html.erb within layouts/application (0.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 377ms (Views: 336.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients?condition=Good" for 127.0.0.1 at 2017-03-03 16:42:42 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Good"}
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Good"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 2]]
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 2]]
+  Rendered patients/index.html.erb within layouts/application (5.2ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 404ms (Views: 363.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/patients?condition=Good" for 127.0.0.1 at 2017-03-03 16:43:03 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Good"}
+  [1m[36mCondition Load (0.5ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Good"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 2]]
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 2]]
+  Rendered patients/index.html.erb within layouts/application (5.5ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 361ms (Views: 326.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients?condition=Good" for 127.0.0.1 at 2017-03-03 16:46:32 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Good"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Good"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 2]]
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 2]]
+  Rendered patients/index.html.erb within layouts/application (6.2ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 384ms (Views: 347.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:46:37 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (0.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 369ms (Views: 345.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients/new" for 127.0.0.1 at 2017-03-03 16:46:41 +0000
+Processing by PatientsController#new as HTML
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+  Rendering patients/new.html.erb within layouts/application
+  Rendered patients/_form.html.erb (167.8ms)
+  Rendered patients/new.html.erb within layouts/application (205.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 595ms (Views: 529.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2017-03-03 16:47:23 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jk60sKy2VNmrLDEF9zV3KEOLLA3liYh0bd6iUWA+cLXeBTjjxsjCxUzjWM+/864JGVzBoDY87azN7PJSjNoL0g==", "condition_id"=>"2", "patient"=>{"fname"=>"John", "lname"=>"Baker", "address"=>"6 River Valley Heights, Swords, Co.Dublin", "dob"=>"07/04/1989", "bloodtype"=>"O+", "alergies"=>"None"}, "commit"=>"Create Patient"}
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "patients" ("fname", "lname", "address", "dob", "bloodtype", "alergies", "created_at", "updated_at", "doctor_id", "condition_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["fname", "John"], ["lname", "Baker"], ["address", "6 River Valley Heights, Swords, Co.Dublin"], ["dob", "07/04/1989"], ["bloodtype", "O+"], ["alergies", "None"], ["created_at", 2017-03-03 16:47:23 UTC], ["updated_at", 2017-03-03 16:47:23 UTC], ["doctor_id", 3], ["condition_id", 2]]
+  [1m[35m (102.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 131ms (ActiveRecord: 105.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:47:24 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 373ms (Views: 339.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:48:02 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (6.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 358ms (Views: 323.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/patients/new" for 127.0.0.1 at 2017-03-03 16:48:07 +0000
+Processing by PatientsController#new as HTML
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+  Rendering patients/new.html.erb within layouts/application
+  Rendered patients/_form.html.erb (12.0ms)
+  Rendered patients/new.html.erb within layouts/application (45.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 425ms (Views: 388.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/patients" for 127.0.0.1 at 2017-03-03 16:48:49 +0000
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FXybZ4NET0uQzrE0WS2s9Dbe1ACiECk25EKnq4MxW1BFNxc06TrZV3cB2P4R63XVbAk5rXGlTO5EcPeob9UgNw==", "condition_id"=>"3", "patient"=>{"fname"=>"Chris ", "lname"=>"Mannix", "address"=>"84 Artane Road, Artane, Co.Dublin", "dob"=>"17/04/1954", "bloodtype"=>"A-", "alergies"=>"None"}, "commit"=>"Create Patient"}
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "patients" ("fname", "lname", "address", "dob", "bloodtype", "alergies", "created_at", "updated_at", "doctor_id", "condition_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["fname", "Chris "], ["lname", "Mannix"], ["address", "84 Artane Road, Artane, Co.Dublin"], ["dob", "17/04/1954"], ["bloodtype", "A-"], ["alergies", "None"], ["created_at", 2017-03-03 16:48:49 UTC], ["updated_at", 2017-03-03 16:48:49 UTC], ["doctor_id", 3], ["condition_id", 3]]
+  [1m[35m (66.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 85ms (ActiveRecord: 68.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:48:49 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (6.1ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 366ms (Views: 327.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/patients/11" for 127.0.0.1 at 2017-03-03 16:48:52 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered patients/show.html.erb within layouts/application (5.5ms)
+  [1m[36mCondition Load (0.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 379ms (Views: 344.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients/13" for 127.0.0.1 at 2017-03-03 16:49:01 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered patients/show.html.erb within layouts/application (6.0ms)
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 362ms (Views: 327.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:50:28 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (6.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 376ms (Views: 342.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:50:50 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (9.5ms)
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 399ms (Views: 354.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:51:11 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (39.0ms)
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `blood_type' for #<Patient:0xb76fb10>):
+    12: 		<% @patients.each do |patient|%>
+    13: 			<tr>
+    14: 				<td><%= link_to patient.fname+" "+patient.lname, patient_path(patient)%></td>
+    15: 				<td><%= link_to patient.blood_type, patient_path(patient)%></td>
+    16: 				<td><%= link_to patient.fname, patient_path(patient)%></td>
+    17: 			</tr>
+    18: 		<% end %>
+  
+app/views/patients/index.html.erb:15:in `block in _app_views_patients_index_html_erb__979611274_96282660'
+app/views/patients/index.html.erb:12:in `_app_views_patients_index_html_erb__979611274_96282660'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1653.4ms)
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:52:29 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 526ms (Views: 485.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:52:49 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 362ms (Views: 324.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:54:06 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (6.0ms)
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 402ms (Views: 360.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:55:42 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 381ms (Views: 347.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:57:54 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (6.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 447ms (Views: 414.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:58:18 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (6.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 357ms (Views: 323.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 16:59:38 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (7.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 372ms (Views: 336.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/patients/13" for 127.0.0.1 at 2017-03-03 16:59:41 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered patients/show.html.erb within layouts/application (7.0ms)
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 400ms (Views: 361.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 17:00:17 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (7.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 387ms (Views: 347.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 17:00:55 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (6.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 369ms (Views: 334.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients/13" for 127.0.0.1 at 2017-03-03 17:01:16 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered patients/show.html.erb within layouts/application (7.0ms)
+  [1m[36mCondition Load (0.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 578ms (Views: 534.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/patients/13" for 127.0.0.1 at 2017-03-03 17:01:36 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered patients/show.html.erb within layouts/application (7.0ms)
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 367ms (Views: 333.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 17:01:38 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (4.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 393ms (Views: 344.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/patients?condition=Fair" for 127.0.0.1 at 2017-03-03 17:03:51 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Fair"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Fair"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 3]]
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 3]]
+  Rendered patients/index.html.erb within layouts/application (6.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 410ms (Views: 373.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/patients?condition=Fair" for 127.0.0.1 at 2017-03-03 17:04:13 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Fair"}
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Fair"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 3]]
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 3]]
+  Rendered patients/index.html.erb within layouts/application (9.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 382ms (Views: 347.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/patients?condition=Good" for 127.0.0.1 at 2017-03-03 17:04:20 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Good"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Good"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 2]]
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 2]]
+  Rendered patients/index.html.erb within layouts/application (6.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 349ms (Views: 315.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/patients?condition=Serious" for 127.0.0.1 at 2017-03-03 17:04:23 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Serious"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Serious"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 4]]
+  Rendered patients/index.html.erb within layouts/application (3.4ms)
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 378ms (Views: 334.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 17:04:26 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (6.1ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 355ms (Views: 323.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/patients/13" for 127.0.0.1 at 2017-03-03 17:18:12 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered patients/show.html.erb within layouts/application (8.0ms)
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 401ms (Views: 365.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/patients/13" for 127.0.0.1 at 2017-03-03 17:20:47 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered patients/show.html.erb within layouts/application (8.0ms)
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 425ms (Views: 388.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-03 17:20:51 +0000
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients"[0m
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" ORDER BY created_at DESC[0m
+  Rendered patients/index.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 396ms (Views: 363.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients/13" for 127.0.0.1 at 2017-03-03 17:23:22 +0000
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered patients/show.html.erb within layouts/application (9.0ms)
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 395ms (Views: 363.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients?condition=Fair" for 127.0.0.1 at 2017-03-03 17:23:29 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Fair"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Fair"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 3]]
+  [1m[36mPatient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 3]]
+  Rendered patients/index.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 545ms (Views: 509.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/patients?condition=Good" for 127.0.0.1 at 2017-03-03 17:23:31 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Good"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Good"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 2]]
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 2]]
+  Rendered patients/index.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (1.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 381ms (Views: 344.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/patients?condition=Undetermined" for 127.0.0.1 at 2017-03-03 17:23:32 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Undetermined"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Undetermined"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 1]]
+  Rendered patients/index.html.erb within layouts/application (2.5ms)
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 376ms (Views: 337.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/patients?condition=Good" for 127.0.0.1 at 2017-03-03 17:23:37 +0000
+Processing by PatientsController#index as HTML
+  Parameters: {"condition"=>"Good"}
+  [1m[36mCondition Load (0.0ms)[0m  [1m[34mSELECT  "conditions".* FROM "conditions" WHERE "conditions"."name" = ? LIMIT ?[0m  [["name", "Good"], ["LIMIT", 1]]
+  Rendering patients/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."condition_id" = ?[0m  [["condition_id", 2]]
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."condition_id" = ? ORDER BY created_at DESC[0m  [["condition_id", 2]]
+  Rendered patients/index.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? ORDER BY "doctors"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCondition Load (1.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions"[0m
+Completed 200 OK in 376ms (Views: 341.4ms | ActiveRecord: 2.0ms)
+
+

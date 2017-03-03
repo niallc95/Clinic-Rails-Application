@@ -6,8 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.0.1'
+gem 'sqlite3'
 gem 'puma', '~> 3.0'
-gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'devise', '~> 4.2'
 gem 'simple_form', '~> 3.4'
@@ -21,10 +21,6 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-end
-
-group :production do
-  gem 'pg'
 end
 
 group :development do

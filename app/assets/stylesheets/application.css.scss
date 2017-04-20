@@ -1,17 +1,328 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@mixin background-tile {
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px 6px #ccc;
+	padding: 1.5em 1.25em;
+}
+
+body {
+	background-color: #f5f5f5;
+	font-family: 'Rockwell', serif;
+}
+
+h1,h2,h3,h4,h5{
+	font-family: 'Rockwell', sans-serif;
+}
+
+.doctor_text{
+	font-size:18px;
+	font-family: 'Rockwell', sans-serif;
+}
+
+.signup_login_text{
+	font-size:18px;
+	font-family: 'Rockwell', sans-serif;
+}
+
+
+.navbar {
+	font-family: 'Rockwell', sans-serif;
+	text-transform: uppercase;
+}
+
+.navbar-default {
+	background-color: #65737e;
+	padding-bottom: 5px;
+
+	.navbar-nav > li > a {
+		color: #fff;
+		&:hover {
+			color: darken(#20B2AA, 2%);
+			transition: 0.5s;
+		}
+	}
+
+	.navbar-header {
+
+		.navbar-brand {
+			color: #fff;
+			letter-spacing: 1.4px;
+			&:hover {
+				color: darken(#20B2AA, 2%);
+				transition: 0.5s;
+			}
+		}
+
+	}
+
+	.dropdown-menu > li > a:hover {
+		background-color: darken(#20B2AA, 2%);
+		color: #fff;
+	}
+
+	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+		background-color: darken(#20B2AA, 2%);
+		color: #fff;	
+	}
+
+}
+
+.dropdown-menu > .active > a {
+	background-color: #20B2AA;
+	color: #fff;
+}
+
+.button_one {
+	color: darken(#65737e, 2%);
+	background-color: #fff;
+	border: 1px solid darken(#65737e, 2%);
+	padding: 8px 20px;
+	border-radius: 5px;
+	font-family: 'Rockwell', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#20B2AA, 2%);
+		color: #fff;
+		transition: 0.5s;
+	}
+}
+
+.signup_button {
+	color: darken(#65737e, 2%);
+	background-color: #fff;
+	border: 1px solid darken(#65737e, 2%);
+	position: absolute;
+	bottom: 7px;
+	left: 25px;
+    margin: auto;
+	padding: 8px 20px;
+	border-radius: 5px;
+	font-family: 'Rockwell', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#20B2AA, 2%);
+		color: #fff;
+		transition: 0.5s;
+	}
+}
+
+.login_button {
+	color: darken(#65737e, 2%);
+	background-color: #fff;
+	border: 1px solid darken(#65737e, 2%);
+	position: absolute;
+	bottom: 7px;
+	right: 25px;
+    margin: auto;
+	padding: 8px 20px;
+	border-radius: 5px;
+	font-family: 'Rockwell', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#20B2AA, 2%);
+		color: #fff;
+		transition: 0.5s;
+	}
+}
+
+.report_info{
+	width: 400px;
+	height: 350px;
+	position: absolute;
+	top: 70px;
+    left: 15px;
+    margin: auto;
+    float:left;
+	
+	@include background-tile;
+}
+
+.report_text{
+	width: 850px;
+	position: absolute;
+	top: 70px;
+    right: 45px;
+    margin: auto;
+    float:left;
+	
+	@include background-tile;
+}
+
+.patient_info{
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	top: 70px;
+    left: 15px;
+    margin: auto;
+	
+	@include background-tile;
+}
+
+.patient_reports{
+	width: 850px;
+	position: absolute;
+	top: 70px;
+    right: 45px;
+    margin: auto;
+	
+	@include background-tile;
+}
+
+.index-form {
+	width:1000px;
+	position: absolute;
+	top: 100px;
+    right: 20px;
+    margin: auto;
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#condition {
+		margin-bottom: 10px;
+	}
+}
+
+.index_profile_info{
+	width: 250px;
+	height: 235px;
+	position: absolute;
+	top: 100px;
+    left: 10px;
+    margin: auto;
+	
+	@include background-tile;
+}
+
+.index_profile_request{
+	width: 250px;
+	height: 235px;
+	position: absolute;
+	bottom: 20px;
+    left: 10px;
+    margin: auto;
+	
+	@include background-tile;
+}
+
+td{
+	font-size:15px;
+	overflow: hidden;
+   	white-space: nowrap;
+}
+
+.new-patient-form {
+	width:700px;
+	height:565px;
+	position: absolute;
+	top: 65px;
+    left: 0;
+    right: 0;
+    margin: auto;
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#condition {
+		margin-bottom: 10px;
+	}
+}
+
+.edit-patient-form {
+	width:700px;
+	height:565px;
+	position: absolute;
+	top: 65px;
+    left: 0;
+    right: 0;
+    margin: auto;
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#condition {
+		margin-bottom: 10px;
+	}
+}
+
+.new-report-form{
+	width:700px;
+	height:565px;
+	position: absolute;
+	top: 65px;
+    left: 0;
+    right: 0;
+    margin: auto;
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#condition {
+		margin-bottom: 10px;
+	}
+}
+
+.edit-report-form{
+	width:700px;
+	height:565px;
+	position: absolute;
+	top: 65px;
+    left: 0;
+    right: 0;
+    margin: auto;
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#condition {
+		margin-bottom: 10px;
+	}
+}
+
+.signup-form {
+	width:550px;
+	height:565px;
+	position: absolute;
+	top: 65px;
+	left: 0;
+    right: 0;
+    margin: auto;
+	@include background-tile;
+
+	h2 {
+		margin-top: 0;
+	}
+
+}
+
+.login-form {
+	width:550px;
+	height:380px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+	@include background-tile;
+
+	h2 {
+		margin-top: 0;
+	}
+
+}

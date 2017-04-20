@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303104240) do
+ActiveRecord::Schema.define(version: 20170314104103) do
 
   create_table "conditions", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20170303104240) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "clinic_id"
     t.index ["email"], name: "index_doctors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
   end
@@ -50,6 +53,15 @@ ActiveRecord::Schema.define(version: 20170303104240) do
     t.string   "patient_image_content_type"
     t.integer  "patient_image_file_size"
     t.datetime "patient_image_updated_at"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.text     "date"
+    t.text     "report"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "doctor_id"
+    t.integer  "patient_id"
   end
 
 end

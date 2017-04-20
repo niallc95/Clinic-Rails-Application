@@ -1,0 +1,28 @@
+<div class="report_info">
+	<h4>Patient Name:</h4>
+	<h5><%= @report.patient.fname %> <%= @report.patient.lname %></h5>
+	<h4>Condition: </h4>
+	<h5><%= @report.patient.condition.name %></h5>
+	<h4>BloodType:</h4>
+	<h5><%= @report.patient.bloodtype %></h5>
+	<h4>Date of Birth:</h4>
+	<h5><%= @report.patient.dob %></h5>
+	<h4>Address:</h4>
+	<h5><%= @report.patient.address %></h5>
+	<br>
+	
+</div>
+<div class="report_text"> 
+	<h4>Date: <%= @report.date %></h4>
+	<h4><%= @report.report %></h4>
+	<center>
+		<%= link_to "Back", patient_path(@report.patient),class: "button_one" %>
+		<% if doctor_signed_in? %>
+			<% if @report.doctor_id == current_doctor.id %>
+				<%= link_to "Edit", edit_patient_report_path(@report.patient_id,@report),class: "button_one" %>
+				<%= link_to "Delete", patient_report_path(@report.patient_id,@report), method: :delete, data: {confirm: "Are you sure?"},class: "button_one" %>
+			<% end %>
+		<% end %>
+	</center>
+</div>
+

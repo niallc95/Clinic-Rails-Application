@@ -1,25 +1,47 @@
-<div class="container">		
-	<div class="jumbotron" style="min-height: 100px;padding: 15px;"> 
-		<% if @patients.count ==0 %>
-			<center><h1>There are no patients</h1></center>
-		<% else %>
-			<table class="table">
-				<tr>
-		    		<th>Name</th>
-		    		<th>Blood Type</th>
-		    		<th>Address</th>
-		    		<th>Alergies</th>
-		  		</tr>
-				<% @patients.each do |patient|%>
-					<tr>
-						<td><%= patient.fname+" "+patient.lname%></td>
-						<td><%= patient.bloodtype%></td>
-						<td><%= patient.address%></td>
-						<td><%= patient.alergies%></td>
-						<td><%= link_to "View Record", patient_path(patient)%></td>
-					</tr>
-				<% end %>
-			</table>
-		<% end %>
+<div class="index_profile_info">
+	<% if doctor_signed_in? %>
+		<h3>Signed in as:</h3>
+		<h5>Dr. <%= current_doctor.first_name %> <%= current_doctor.last_name %></h5>
+		<br>
+		<h5>Clinic ID: <%= current_doctor.clinic_id %></h5>
+		<br><br>
+		<center><td><%= link_to "Edit Profile", edit_doctor_registration_path(current_doctor),class: "button_one" %></td></center>
+	<% else %>
+		<img src="/not.png" alt="Not logged in" style="display: block; margin-left: auto;margin-right: auto;" height="50" width="50"/>
+		<h4 style="text-align: center; vertical-align: middle; line-height: 90px;">
+			You are not signed in!
+		</h4>
+	<% end %>
+</div>
+
+<div class="container">	
+	<div class="index-form">	
+		<div class="jumbotron" style="min-height: 100px;padding: 15px;background-color:#fff;">
+			<% if @patients.count ==0 %>
+				<center><h3>There are no patients</h3></center>
+			<% else %>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+				    		<th>Name</th>
+				    		<th>Blood Type</th>
+				    		<th>Address</th>
+				    		<th/>
+				  		</tr>
+				  	</thead>
+				  	<tbody>
+						<% @patients.each do |patient|%>
+							<tr>
+								<td><%= patient.fname+" "+patient.lname%></td>
+								<td><%= patient.bloodtype%></td>
+								<td><%= patient.address%></td>
+								<td><%= link_to "View Record", patient_path(patient),class: "button_one" %></td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+			<% end %>
+		</div>
 	</div>
 </div>
+ 

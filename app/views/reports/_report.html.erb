@@ -1,0 +1,9 @@
+<p><%= report.date %></p>
+<h3><%= report.report %></h3>
+
+<% if doctor_signed_in? %> 
+	<% if report.doctor_id == current_doctor.id %> 
+		<%= link_to "Edit", edit_patient_report_path(report.patient, report) %>
+		<%= link_to "Delete", patient_report_path(report.patient, report), method: :delete, data: {confirm: "Are you sure?"} %>
+	<% end %>
+<% end %>

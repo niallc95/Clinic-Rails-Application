@@ -1,12 +1,14 @@
 class PatientsController < ApplicationController
 	before_action :find_patient, only: [:show, :edit, :update, :destroy]
-
+	before_action :authenticate_doctor!, only: [:new, :edit]
 	def index 
-		if params[:condition].blank?
-			@patients = Patient.all.order("created_at DESC")
-		else
+		if params.has_key?(:condition)
 			@condition_id = Condition.find_by(name: params[:condition]).id
 			@patients = Patient.where(:condition_id => @condition_id).order("created_at DESC")
+		elsif params.has_key?(:doctor_id)
+			@patients = Patient.where(:doctor_id => params[:doctor_id]).order("created_at DESC")
+		else
+			@patients = Patient.all.order("created_at DESC")
 		end
 	end
 
